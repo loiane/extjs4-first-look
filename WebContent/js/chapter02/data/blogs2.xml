@@ -1,0 +1,10 @@
+<blogs>
+	<blog>
+		<id>1</id>
+		<url>http://loianegroner.com</url>
+	</blog>	
+	<blog>
+		<id>2</id>
+		<url>http://loiane.com</url>
+	</blog>	
+</blogs>

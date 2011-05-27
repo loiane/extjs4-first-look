@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Ext JS 4</title>
+</head>
+
+	<link rel="stylesheet" type="text/css" href="../../extjs/resources/css/ext-all.css" /> 
+    <script type="text/javascript" src="../../extjs/builds/ext-core-debug.js"></script> 
+    <script type="text/javascript" src="../../extjs/ext-all-debug-w-comments.js"></script>
+    
+     <script type="text/javascript">
+     Ext.regModel('Blog', {
+    	    fields: [
+    	        {name: 'id', type: 'int'},
+    	        {name: 'name', type: 'string'},
+    	        {name: 'url', type: 'string'}
+    	    ]
+    	});
+     
+     Ext.onReady(function() {  
+		
+    	 var store = new Ext.data.Store({
+    			model: 'Blog',
+    			proxy: {
+    				type: 'ajax',
+    				url : '../../js/chapter02/data/blogs.json',
+    				reader: {
+    					type: 'json',
+    					root: 'blogs'
+    				}
+    			}
+    		});    	 
+
+    	//Loads the store, which calls our callback function when it has loaded
+    	//There are 4 records in the JSON response, so this should alert 4:
+    	store.load(function(records) {
+    		Ext.MessageBox.alert('Testing Ext 4 Models', "Loaded " + store.getCount() + " records");
+    	});
+     	
+
+     });
+     </script> 
+<body>
+</body>
+</html>

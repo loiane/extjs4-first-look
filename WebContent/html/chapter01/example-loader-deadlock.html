@@ -1,0 +1,25 @@
+<html>
+<title>Ext JS 4</title>
+</head>
+
+	<link rel="stylesheet" type="text/css" href="../../ext-4.0-pr5/resources/css/ext-all.css" /> 
+    <script type="text/javascript" src="../../ext-4.0-pr5/ext-core-debug.js"></script> 
+    <script type="text/javascript" src="../../ext-4.0-pr5/ext-all-debug-w-comments.js"></script>
+    
+     <script type="text/javascript">
+      Ext.Loader.setConfig({
+    		enabled: true,
+    		paths: {'deadlock':'../../js/chapter01/deadlock'}
+    	});
+
+    	Ext.onReady(function(){
+
+    		Ext.require(['deadlock.A'], function() {
+    			alert("Loaded: " + Ext.Loader.history.join(" => "));
+    		});
+
+     });
+     </script> 
+<body>
+</body>
+</html>
