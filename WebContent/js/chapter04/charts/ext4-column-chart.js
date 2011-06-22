@@ -1,6 +1,6 @@
 Ext.onReady(function(){
 	
-    var store = new Ext.data.JsonStore({
+    var store = Ext.create('Ext.data.JsonStore', {
         fields:['name', 'age'],
         data: [
             {name:'Loiane', age: 25},
@@ -38,12 +38,7 @@ Ext.onReady(function(){
                 title: 'Friend Name'
             }],
             legend:{
-            	position: 'right',
-            	boxFill : 'red',
-            	boxStroke: 'green',
-            	boxStrokeWidth: 3,
-            	itemSpacing: 5,
-            	padding: 10
+            	position: 'right'
             },
             series: [{
                 type: 'column',

@@ -38,6 +38,7 @@ Ext.onReady(function () {
         }],
         
         series: [{
+        	//column:true,
             type: 'bar',
             axis: 'bottom',
             highlight: true,
@@ -50,7 +51,7 @@ Ext.onReady(function () {
               }
             },
             xField: 'os',
-            yField: ['visits']
+            yField: 'visits'
         }]
     });
 	

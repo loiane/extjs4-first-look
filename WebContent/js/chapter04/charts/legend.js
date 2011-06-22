@@ -18,7 +18,7 @@ Ext.onReady(function () {
         ]
     });
     
-    var stackeBarChart = Ext.create('Ext.chart.Chart', {
+    var groupedBarChart = Ext.create('Ext.chart.Chart', {
     	animate: true,
         shadow: true,
         store: store,
@@ -51,12 +51,15 @@ Ext.onReady(function () {
               }
             },
             xField: 'year',
-            yField: ['windows','linux','macos'],
-            stacked: true
+            yField: ['windows','linux','macos']
         }],
         
         legend: {
-            position: 'right'
+            position: 'right',
+            padding: 20,
+            itemSpacing: 15,
+            boxFill: '#CCFFCC',
+            labelFont : '16px Helvetica'
         }
     });
 	
@@ -65,9 +68,9 @@ Ext.onReady(function () {
         height: 400,
         hidden: false,
         maximizable: true,
-        title: 'Stacked Bar Chart',
+        title: 'Grouped Bar Chart',
         renderTo: Ext.getBody(),
         layout: 'fit',
-        items: [stackeBarChart]
+        items: [groupedBarChart]
     });
 });

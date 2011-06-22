@@ -1,20 +1,20 @@
 Ext.onReady(function(){
 	
 	var drawComponent = Ext.create('Ext.draw.Component', {
-	    viewBox: true, //resize
+	    viewBox: false,
 	    items: [{
 	        type: 'rect',
-	        fill: '#79BB3F',
-	        width: 180,
+	        fill: '#9966FF',
+	        width: 350,
 	        height: 200,
-	        x: 100,
-	        y: 100
+	        x: 20,
+	        y: 20
 	    }]
 	});
 
 	Ext.create('Ext.Window', {
-	    width: 215,
-	    height: 235,
+	    width: 400,
+	    height: 280,
 	    layout: 'fit',
 	    items: [drawComponent]
 	}).show();

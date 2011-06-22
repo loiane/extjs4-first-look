@@ -18,7 +18,7 @@ Ext.onReady(function () {
         ]
     });
     
-    var barChart = Ext.create('Ext.chart.Chart', {
+    var groupedBarChart = Ext.create('Ext.chart.Chart', {
     	animate: true,
         shadow: true,
         store: store,
@@ -47,7 +47,7 @@ Ext.onReady(function () {
               width: 140,
               height: 28,
               renderer: function(storeItem, item) {
-                  this.setTitle(String(item.value[1]) + 'Visits');
+                  this.setTitle(String(item.value[1]) + ' Visits');
               }
             },
             xField: 'year',
@@ -64,9 +64,9 @@ Ext.onReady(function () {
         height: 400,
         hidden: false,
         maximizable: true,
-        title: 'Bar Chart',
+        title: 'Grouped Bar Chart',
         renderTo: Ext.getBody(),
         layout: 'fit',
-        items: [barChart]
+        items: [groupedBarChart]
     });
 });

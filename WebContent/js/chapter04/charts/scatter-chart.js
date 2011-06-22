@@ -24,7 +24,7 @@ Ext.onReady(function () {
         ]
     });
 	
-	var lineChart = Ext.create('Ext.chart.Chart', {
+	var scatterChart = Ext.create('Ext.chart.Chart', {
 		style: 'background:#fff',
         animate: true,
         store: store,
@@ -43,30 +43,14 @@ Ext.onReady(function () {
             title: 'Month of the Year'
         }],
         series: [{
-            type: 'line',
+            type: 'scatter',
             highlight: {
                 size: 7,
                 radius: 7
             },
-            tips: {
-                trackMouse: true,
-                width: 140,
-                height: 28,
-                renderer: function(storeItem, item) {
-                  this.setTitle(storeItem.get('month') + ': ' + storeItem.get('visits') + ' visits');
-                }
-              },
             axis: 'left',
             xField: 'month',
-            yField: 'visits'/*,
-            smooth: true,
-            markerConfig: {
-                type: 'cross',
-                radius: 5,
-                'fill': '#f00'
-            },
-            showMarkers: true,
-            fill: true*/
+            yField: 'visits'
         }]
 	});
     
@@ -75,9 +59,9 @@ Ext.onReady(function () {
         height: 400,
         hidden: false,
         maximizable: true,
-        title: 'Line Chart',
+        title: 'Scatter Chart',
         renderTo: Ext.getBody(),
         layout: 'fit',
-        items: [lineChart]
+        items: [scatterChart]
     });
 });

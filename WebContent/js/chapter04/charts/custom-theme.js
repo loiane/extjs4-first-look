@@ -1,5 +1,31 @@
-Ext.require('Ext.chart.*');
-Ext.require(['Ext.Window', 'Ext.fx.target.Sprite', 'Ext.layout.container.Fit']);
+Ext.define('Ext.chart.theme.Blue', {
+    extend: 'Ext.chart.theme.Base',
+    
+    baseColor: '#000099',
+    colors: ['#3399FF', '#0066CC', '#003366'],
+
+    constructor: function(config) {
+        this.callParent([Ext.apply({
+            axis: {
+                fill: this.baseColor,
+                stroke: this.baseColor
+            },
+            axisLabelLeft: {
+                fill: this.baseColor
+            },
+            axisLabelBottom: {
+                fill: this.baseColor
+            },
+            axisTitleLeft: {
+                fill: this.baseColor
+            },
+            axisTitleBottom: {
+                fill: this.baseColor
+            },
+            colors: this.colors
+        }, config)]);
+    }
+});
 
 Ext.onReady(function () {
 	
@@ -18,12 +44,12 @@ Ext.onReady(function () {
         ]
     });
     
-    var stackeBarChart = Ext.create('Ext.chart.Chart', {
+    var groupedBarChart = Ext.create('Ext.chart.Chart', {
     	animate: true,
         shadow: true,
         store: store,
         style: 'background:#fff',
-        
+        theme: 'Blue',
         axes: [{
             type: 'Category',
             position: 'left',
@@ -51,8 +77,7 @@ Ext.onReady(function () {
               }
             },
             xField: 'year',
-            yField: ['windows','linux','macos'],
-            stacked: true
+            yField: ['windows','linux','macos']
         }],
         
         legend: {
@@ -65,9 +90,9 @@ Ext.onReady(function () {
         height: 400,
         hidden: false,
         maximizable: true,
-        title: 'Stacked Bar Chart',
+        title: 'Grouped Bar Chart',
         renderTo: Ext.getBody(),
         layout: 'fit',
-        items: [stackeBarChart]
+        items: [groupedBarChart]
     });
 });

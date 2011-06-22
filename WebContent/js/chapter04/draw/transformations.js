@@ -1,14 +1,14 @@
 Ext.onReady(function(){
 	
 	var drawComponent1 = Ext.create('Ext.draw.Component', {
-	    viewBox: false, //resize
+	    viewBox: false,
 	    autoSize: true,
         padding: 20,
 	    items: [{
 	        type: 'text',
             text: 'Hello, World!',
             fill: '#000',
-            font: '20px "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+            font: '20px "Lucida Grande", "Lucida Sans Unicode"',
             rotate: {
                 degrees: 45
             }
@@ -16,30 +16,30 @@ Ext.onReady(function(){
 	});
 	
 	var drawComponent = Ext.create('Ext.draw.Component', {
-	    viewBox: false, //resize
+	    viewBox: false,
 	    autoSize: true,
         padding: 20,
 	    items: [{
 	        type: 'text',
             text: 'Hello, World!',
             fill: '#000',
-            font: '20px "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+            font: '20px "Lucida Grande", "Lucida Sans Unicode"',
             translate: {
             	x: 1,
-            	y: 1
+            	y: 10
             }
 	    }]
 	});
 	
 	var drawComponent2 = Ext.create('Ext.draw.Component', {
-	    viewBox: false, //resize
+	    viewBox: false,
 	    autoSize: true,
         padding: 20,
 	    items: [{
 	        type: 'text',
             text: 'Hello, World!',
             fill: '#000',
-            font: '20px "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif',
+            font: '20px "Lucida Grande", "Lucida Sans Unicode"',
             scale: {
             	x: 1,
             	y: 3
@@ -51,6 +51,6 @@ Ext.onReady(function(){
 	    width: 200,
 	    height: 200,
 	    layout: 'fit',
-	    items: [drawComponent]
+	    items: [drawComponent2]
 	}).show();
 });

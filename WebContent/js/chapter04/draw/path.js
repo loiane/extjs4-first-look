@@ -24,8 +24,8 @@ Ext.onReady(function(){
 	});
 
 	Ext.create('Ext.Window', {
-	    width: 215,
-	    height: 235,
+	    width: 250,
+	    height: 500,
 	    layout: 'fit',
 	    items: [drawComponent]
 	}).show();
