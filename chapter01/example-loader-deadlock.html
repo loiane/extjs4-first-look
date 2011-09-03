@@ -1,0 +1,24 @@
+<html>
+<title>Ext JS 4</title>
+</head>
+
+	<link rel="stylesheet" type="text/css" href="../extjs/resources/css/ext-all.css" /> 
+    <script type="text/javascript" src="../extjs/bootstrap.js"></script>
+    
+     <script type="text/javascript">
+      Ext.Loader.setConfig({
+    		enabled: true,
+    		paths: {'deadlock':'deadlock'}
+    	});
+
+    	Ext.onReady(function(){
+
+    		Ext.require(['deadlock.A'], function() {
+    			alert("Loaded: " + Ext.Loader.history.join(" => "));
+    		});
+
+     });
+     </script> 
+<body>
+</body>
+</html>

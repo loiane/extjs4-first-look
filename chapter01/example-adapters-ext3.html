@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Ext JS 3 + Ext JS 4 = sandbox</title>
+
+	<link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.3.1/resources/css/ext-all.css" />
+	
+	<script type="text/javascript" src="adapters/jquery.js"></script>
+	<script type="text/javascript" src="http://extjs.cachefly.net/ext-3.3.1/adapter/jquery/ext-jquery-adapter-debug.js"></script> 
+	<script type="text/javascript" src="http://extjs.cachefly.net/ext-3.3.1/ext-all-debug.js"></script>
+	
+	<script type="text/javascript">
+     Ext.onReady(function() {  
+    	 Ext.MessageBox.alert('Testing Adapter', $('span#ext3').text());
+     });
+     </script>  
+</head>
+<body>
+	<span id="ext3">It worked!</span>	
+</body>
+</html>
