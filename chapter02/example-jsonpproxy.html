@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Ext JS 4</title>
+</head>
+
+	<link rel="stylesheet" type="text/css" href="../../extjs/resources/css/ext-all.css" /> 
+    <script type="text/javascript" src="../../extjs/builds/ext-core-debug.js"></script> 
+    <script type="text/javascript" src="../../extjs/ext-all-debug-w-comments.js"></script>
+    
+     <script type="text/javascript">
+     Ext.regModel('Blog', {
+    		fields: [
+    		    {name: 'id', type: 'int'},
+    		    {name: 'url', type: 'string'}
+    		],
+    		
+    		proxy: {
+    	        type: 'jsonp',
+    	        url : 'http://loianegroner.com/extjs/blogs.php'
+    	    }
+    	});
+     
+     Ext.onReady(function() {  
+    	 var store = new Ext.data.Store({
+    		    model: 'Blog'
+    		});
+
+    		store.load(function(records) {
+
+    			var blog,i;
+    		    for (i=0;i<records.length;i++){
+    		    	blog = records[i].data;
+    		    	console.log(blog.id + " : " + blog.url);
+    		    }
+    		});
+     });		
+     </script> 
+<body>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Ext JS 4</title>
+</head>
+
+	<link rel="stylesheet" type="text/css" href="../../extjs/resources/css/ext-all.css" /> 
+    <script type="text/javascript" src="../../extjs/builds/ext-core-debug.js"></script> 
+    <script type="text/javascript" src="../../extjs/ext-all-debug-w-comments.js"></script>
+    
+     <script type="text/javascript">
+     Ext.regModel('Patient', {
+    	    fields: [
+    	        {name: 'name'},
+    	        {name: 'age',      type: 'int'},
+    	        {name: 'phone',    type: 'string'},
+    	        {name: 'gender',   type: 'string'},
+    	        {name: 'birthday', type: 'date', dateFormat: 'd/m/Y'},
+    	        {name: 'alive',    type: 'boolean', defaultValue: true},
+    	        {name: 'weight', type: 'float'},
+    	        {name: 'weightKg', type: 'float',
+    	        	convert: function(value, record) {
+    	        		var weightPounds = record.get('weight');
+    	                return Math.round(weightPounds * 0.45359237);
+    	            }
+    	        }
+    	    ],
+    	    getBasicInfo: function() {
+    	        var info = 'Name: ' + this.get('name');
+    	        info += ' - Gender: '+ this.get('gender');
+    	        info += ' - Age: '+ this.get('age');
+    	        return info;
+    	    },
+    	    validations: [
+    	        {type: 'presence',  field: 'age'},
+    	        {type: 'presence',  field: 'name'},
+    	        {type: 'length',    field: 'name', min: 2, max: 60},
+    	        {type: 'format',    field: 'name', matcher: /([a-z]+)/},
+    	        {type: 'inclusion', field: 'gender',   list: ['M', 'F']},
+    	        {type: 'exclusion', field: 'weight', list: [0]}
+    	     ]    	    
+    	});
+     
+     Ext.onReady(function() {  
+		
+     	/*var patient = new Patient({
+   	    	name: 'Loiane Groner',
+   		    age: 25,
+   		    phone: '9876-5432',
+   		    gender: 'F',
+   			birthday: '05/26/1986',
+   			weight: 150
+   		});
+
+		console.log(patient.get('name'));
+		console.log(patient.get('alive'));
+		console.log(patient.get('weightKg'));
+		console.log(patient.getBasicInfo());*/
+    	 var patient = new Patient({
+    	    	name: 'L',
+    		    phone: '9876-5432',
+    		    gender: 'Unkown',
+    			birthday: '05/26/1986'
+    		});
+		
+		var errors = patient.validate();
+		console.log(errors.isValid());
+		console.log(errors.items);
+		console.log(errors.getByField('name'));  // [{field: 'name',  error: 'must be present'}]
+     });
+     </script> 
+<body>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[{
+    "text": "Cartesian", 
+    "cls": "folder",
+    "expanded": true,
+    "children": [{
+        "text": "Bar",
+        "leaf": true,
+        "checked": true
+    },{
+        "text": "Column",
+        "leaf": true,
+        "checked": true
+    },{
+        "text": "Line",
+        "leaf": true,
+        "checked": false
+    }]
+},{
+    "text": "Gauge",
+    "leaf": true,
+    "checked": false
+},{
+    "text": "Pie",
+    "leaf": true,
+    "checked": true
+}]

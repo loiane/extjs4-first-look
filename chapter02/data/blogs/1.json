@@ -1,0 +1,9 @@
+{
+    "blogs": [
+        {
+            "id": 1,
+            "name": 'Loiane Groner',
+            "url": 'http://loianegroner.com'
+        }
+    ]
+}

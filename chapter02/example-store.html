@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>Ext JS 4</title>
+</head>
+
+	<link rel="stylesheet" type="text/css" href="../../extjs/resources/css/ext-all.css" /> 
+    <script type="text/javascript" src="../../extjs/builds/ext-core-debug.js"></script> 
+    <script type="text/javascript" src="../../extjs/ext-all-debug-w-comments.js"></script>
+    
+     <script type="text/javascript">
+     Ext.regModel('Book', {
+    		fields: [
+    		    {name: 'id', type: 'int'},
+    	    	{name: 'title', type: 'string'},
+    	    	{name: 'pages', type: 'int'},
+    	    	{name: 'numChapters', type: 'int'},
+    	    	{name: 'subject', type: 'string'}
+    		],
+    		proxy: {
+    	        type: 'ajax',
+    	        url : '../../js/chapter02/data/books/books.json'
+    	    }
+    	});
+
+     
+    
+	Ext.onReady(function() {
+		var store = new Ext.data.Store({
+		    model: 'Book',
+		    autoLoad: true,
+		    /*data: [
+		       	{
+		        	"id": 11,
+		            "title": 'Learning Ext JS 3.2',
+		            "pages": 432,
+		            "numChapters": 17,
+		            "subject": 'Ext JS'
+		    	},
+		        {
+		        	"id": 12,
+		            "title": 'Learning Ext JS',
+		            "pages": 324,
+		            "numChapters": 14,
+		            "subject": 'Ext JS'
+		         },
+		         {
+		        	"id": 13,
+		            "title": 'Ext JS 3.0 Cookbook',
+		            "pages": 376,
+		            "numChapters": 10,
+		            "subject": 'Ext JS'
+		         },
+		         {
+		        	"id": 14,
+		            "title": 'Spring Security 3',
+		            "pages": 396,
+		            "numChapters": 13,
+		            "subject": 'Java'
+		         },
+		         {
+		        	"id": 15,
+		            "title": 'WordPress Top Plugins',
+		            "pages": 252,
+		            "numChapters": 10,
+		            "subject": 'PHP'
+		         },
+		         {
+		        	"id": 16,
+		            "title": 'PHP Programming with PEAR',
+		            "pages": 250,
+		            "numChapters": 5,
+		            "subject": 'PHP'
+		         }
+		    ],*/
+		    
+		    /*sorters: [
+		       {
+		           property : 'pages',
+		           direction: 'DESC'
+		       },
+		       {
+		           property : 'numChapters',
+		           direction: 'ASC'
+		       }
+		    ]*/
+		    
+		    filters: [
+		              {
+		                  property : 'subject',
+		                  value: 'JAVA'
+		              },
+		              {
+		                  property : 'numChapters',
+		                  value: 13
+		              }
+		           ]
+		});
+		
+		//console.log(store.getCount());
+		
+		//store.sort('subject','ASC');
+		
+		/*store.sort(
+				{
+				   property : 'subject',
+				   direction: 'ASC'
+				},
+				{
+				   property : 'title',
+				   direction: 'ASC'
+				}
+			);*/
+		//store.filter('numChapters',10);	
+		
+		var book,i;
+		for (i=0;i<store.getCount();i++){
+	    	book = store.getAt(i).data;
+	    	console.log(book.id + " : " + book.title);
+	    }
+	});
+</script> 
+<body>
+</body>
+</html>

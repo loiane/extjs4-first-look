@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Ext JS 4</title>
+</head>
+
+	<link rel="stylesheet" type="text/css" href="../../extjs/resources/css/ext-all.css" /> 
+    <script type="text/javascript" src="../../extjs/builds/ext-core-debug.js"></script> 
+    <script type="text/javascript" src="../../extjs/ext-all-debug-w-comments.js"></script>
+    
+     <script type="text/javascript">
+     Ext.require('Ext.form.ComboBox');
+     
+     Ext.regModel('Gender', {
+    	    fields: [
+    	    	{name: 'id', type: 'int'},
+    	    	{name: 'name', type: 'string'}
+    	    ]
+    	});
+     
+     Ext.onReady(function() {  
+    	 var data = {
+    			    genders: [
+    			        {
+    			            id: 1,
+    			            name: 'Female'
+    			        },
+    			        {
+    			            id: 2,
+    			            name: 'Male'
+    			        },
+    			        {
+    			            id: 3,
+    			            name: 'Unknown'
+    			        }
+    			    ]
+    			};
+
+    			var store = new Ext.data.Store({
+    			    autoLoad: true,
+    			    model: 'Gender',
+    			    data : data,
+    			    proxy: {
+    			        type: 'memory',
+    			        reader: {
+    			            type: 'json',
+    			            root: 'genders'
+    			        }
+    			    }
+    			});
+     
+	   //ComboBox using the data store
+	     var comboBox = Ext.create('Ext.form.ComboBox', {
+	         fieldLabel: 'Gender',
+	         renderTo: 'genderCombo',
+	         displayField: 'name',
+	         width: 200,
+	         labelWidth: 50,
+	         store: store,
+	         queryMode: 'local',
+	         typeAhead: false
+	     });
+     });
+     </script> 
+<body>
+<div id="genderCombo"></div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+    "blogs": [
+        {
+            "id": 1,
+            "name": 'Loiane Groner',
+            "url": 'http://loianegroner.com',
+            "authors": [{
+            	"id": 1,
+	            "name": 'Loiane Groner',
+	            "email": 'me@loiane.com'
+            }]
+        }
+    ]
+}

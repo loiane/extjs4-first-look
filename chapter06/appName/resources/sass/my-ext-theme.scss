@@ -1,0 +1,87 @@
+$include-default: true;
+
+$base-color: #bbe4b6; //green-ish
+
+$panel-border-radius: 3px; 
+$panel-header-font-size: 16px; 
+
+//---To fix bug on ext 4.02a and previous versions: BEGIN
+
+//grid
+$grid-header-over-border-color: adjust-color($base-color, $hue: -0.175deg, $saturation: 25.296%, $lightness: -2.549%) !default;
+
+//accordion
+$accordion-header-background-color: adjust-color($base-color, $hue: -1.333deg, $saturation: -3.831%, $lightness: 4.51%) !default;
+
+//toolbar
+$toolbar-separator-color: adjust-color($base-color, $hue: 0deg, $saturation: 0.542%, $lightness: 7.843%) !default;
+
+//buttons 
+$btn-group-background-color: adjust-color($base-color, $hue: -1.333deg, $saturation: -3.831%, $lightness: 4.51%) !default;
+$btn-group-border-color: adjust-color($base-color, $hue: 0deg, $saturation: 7.644%, $lightness: -8.627%) !default;
+$btn-group-inner-border-color: lighten($base-color, 20%) !default; 
+$btn-group-header-color: #000 !default; 
+$btn-group-header-background-color: $btn-group-background-color; 
+
+//menus 
+$menu-item-active-background-color: lighten($base-color, 20%) !default; 
+$menu-item-active-border-color: darken($base-color, 40%) !default; 
+
+//---To fix bug on ext 4.02a and previous versions: END
+
+@import 'compass';
+@import 'ext4/default/all';
+
+$include-default: true;
+
+$base-color: #bbe4b6; //green-ish
+
+$panel-border-radius: 3px; 
+$panel-header-font-size: 16px; 
+
+//---To fix bug on ext 4.02a and previous versions: BEGIN
+
+//grid
+$grid-header-over-border-color: adjust-color($base-color, $hue: -0.175deg, $saturation: 25.296%, $lightness: -2.549%) !default;
+
+//accordion
+$accordion-header-background-color: adjust-color($base-color, $hue: -1.333deg, $saturation: -3.831%, $lightness: 4.51%) !default;
+
+//toolbar
+$toolbar-separator-color: adjust-color($base-color, $hue: 0deg, $saturation: 0.542%, $lightness: 7.843%) !default;
+
+//buttons 
+$btn-group-background-color: adjust-color($base-color, $hue: -1.333deg, $saturation: -3.831%, $lightness: 4.51%) !default;
+$btn-group-border-color: adjust-color($base-color, $hue: 0deg, $saturation: 7.644%, $lightness: -8.627%) !default;
+$btn-group-inner-border-color: lighten($base-color, 20%) !default; 
+$btn-group-header-color: #000 !default; 
+$btn-group-header-background-color: $btn-group-background-color; 
+
+//menus 
+$menu-item-active-background-color: lighten($base-color, 20%) !default; 
+$menu-item-active-border-color: darken($base-color, 40%) !default; 
+
+//---To fix bug on ext 4.02a and previous versions: END
+
+@import 'compass';
+@import 'ext4/default/all';
+
+@include extjs-window-ui(
+	'custom',
+        
+    $ui-border-radius: 10px,
+    $ui-border-color: darken($base-color, 40%),
+    $ui-inner-border-color:darken($base-color, 30%),
+
+    $ui-header-color: darken($base-color, 60%),
+
+    $ui-body-border-color: darken($base-color, 30%),
+    $ui-body-background-color: $window-body-background-color,
+    $ui-body-color: darken($base-color, 30%),
+
+    $ui-background-color: $base-color
+);
+
+$relative-image-path-for-uis: true;
+
+$relative-image-path-for-uis: true;

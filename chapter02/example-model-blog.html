@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Ext JS 4</title>
+</head>
+
+	<link rel="stylesheet" type="text/css" href="../../extjs/resources/css/ext-all.css" /> 
+    <script type="text/javascript" src="../../extjs/builds/ext-core-debug.js"></script> 
+    <script type="text/javascript" src="../../extjs/ext-all-debug-w-comments.js"></script>
+    
+     <script type="text/javascript">
+     Ext.regModel('Blog', {
+    	    fields: [
+    	        {name: 'id', type: 'int'},
+    	        {name: 'name', type: 'string'},
+    	        {name: 'url', type: 'string'}
+    	    ]
+    	});
+     
+     Ext.onReady(function() {  
+		
+     	var blog = new Blog({
+    		id: 1,
+   		    name: 'Loiane Groner',
+   		    url: 'http://loianegroner.com'
+   		});
+
+     	Ext.MessageBox.alert('Testing Ext 4 Models', blog.get('name') + "'s url is " + blog.get('url'));
+
+     });
+     </script> 
+<body>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+    success: true,
+    data: {
+        bookId: 10,
+        bookName: "Ext JS 4 First Look",
+        bookAuthor: "Loiane Groner"
+    }
+}
