@@ -28,7 +28,7 @@ Ext4.onReady(function(){
 
     var grid2 = new Ext4.grid.GridPanel({
         store: store,
-        headers: [
+        columns: [
             {text: "Book", width: 250, dataIndex: 'book'},
             {text: "Manufacturer", width: 75, dataIndex: 'manufacturer'},
             {text: "Published", width: 100, dataIndex: 'published', 
