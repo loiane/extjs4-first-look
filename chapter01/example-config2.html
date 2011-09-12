@@ -20,11 +20,15 @@
     		    
     		    setTitle: function(newTitle) {
     		        this.title = this.applyTitle('Updated to: '+newTitle) || newTitle;
-    		     }
+    		     },
+
+				applyTitle : function(newTitle){
+					this.title = newTitle;
+				}
     		});
     		
     		var win = Ext.create('MyApp.MyWindow');
-    		win.setTitle('I changed the title');
+    		win.applyTitle('I changed the title');
     		win.show();
     	});
      </script> 

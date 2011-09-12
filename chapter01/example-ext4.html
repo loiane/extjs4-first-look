@@ -27,17 +27,14 @@
     		    title: 'Welcome!',
     		
     			initComponent: function() {
-    				 Ext.apply(this, {
-    		            items: [
-    		                {
-    		                    xtype: 'textfield',
-    		                    name: 'tfName',
-    		                    fieldLabel: 'Enter your name'
-    		                }
-    		            ]
-    		        });
+    				 
+    		        this.items = [{
+    		        	xtype: 'textfield',
+    		            name: 'tfName',
+    		            fieldLabel: 'Enter your name'
+    		        }],
     		 
-    		        MyApp.MyWindow.superclass.initComponent.apply(this, arguments);
+    		        this.callParent(arguments);
     		    }
     		});
     		
